@@ -29,7 +29,7 @@ Solve Exercise 3 here:
 */
 
 game.difficulty = "easy";
-// console.log(game.difficulty);
+console.log(game.difficulty);
 
 /*
 Exercise 4
@@ -41,7 +41,7 @@ Solve Exercise 4 here:
 */
 
 game.party.push(pokemon[0]);
-// console.log(game.party);
+console.log(game.party);
 
 // for (let index = 0; index < pokemon.length; index++) {
 //   if(pokemon[i].starter=true){
@@ -78,7 +78,7 @@ for (let index = 0; index < game.gyms.length; index++) {
     game.gyms[index].completed = true;
   }
 }
-// console.log(game.gyms);
+console.log(game.gyms);
 
 /*
 Exercise 7
@@ -101,7 +101,7 @@ game.party.splice(0, 1, pokemon[1]);
 game.party.splice(3, 1, pokemon[4]);
 game.party.splice(6, 1, pokemon[7]);
 game.party.splice(24, 1, pokemon[25]);
-// console.log(game.party);
+console.log(game.party);
 
 /*
 Exercise 8
@@ -111,7 +111,7 @@ Exercise 8
 Solve Exercise 8 here:
 */
 for (let index = 0; index < game.party.length; index++) {
-  // console.log(game.party[index].name);
+  console.log(game.party[index].name);
 }
 
 /*
@@ -217,19 +217,17 @@ For example, if five gym objects have a value of `true` on their `completed` pro
 Solve Exercise 13 here:
 */
 
-game.gymStatus = function (pokemonObj) {
-  let gymTally = 0;
-  let incomplete = 0;
+game.gymStatus = function () {
+  let gymTally = { completed: 0, incomplete: 0 };
   for (let index = 0; index < game.gyms.length; index++) {
     if (game.gyms[index].completed === true) {
-      gymTally += 1;
+      gymTally.completed += 1;
     }
     if (game.gyms[index].completed === false) {
-      incomplete += 1;
+      gymTally.incomplete += 1;
     }
   }
   console.log(gymTally);
-  console.log(incomplete);
 };
 
 game.gymStatus();
@@ -277,5 +275,6 @@ Solve Exercise 16 here:
 */
 
 console.log(game);
-// console.dir(pokemon, { maxArrayLength: null });
-// console.log(game);
+console.dir(pokemon, { maxArrayLength: null });
+console.log(game);
+game.gymStatus();
